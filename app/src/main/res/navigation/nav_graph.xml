@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homefragment">
+
+    <fragment
+        android:id="@+id/homefragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.Homefragment"
+        android:label="fragment_homefragment"
+        tools:layout="@layout/fragment_homefragment" >
+        <action
+            android:id="@+id/action_homefragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homefragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homefragment_to_moneyTransferFragment3"
+            app:destination="@id/moneyTransferFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.ViewBalanceFragment"
+        android:label="fragment_view_balance"
+        tools:layout="@layout/fragment_view_balance" >
+        <action
+            android:id="@+id/action_viewBalanceFragment_to_homefragment"
+            app:destination="@id/homefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.viewTransactionFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_view_transaction" >
+        <action
+            android:id="@+id/action_viewTransactionFragment_to_homefragment"
+            app:destination="@id/homefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moneyTransferFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.MoneyTransferFragment"
+        android:label="fragment_money_transfer"
+        tools:layout="@layout/fragment_money_transfer" >
+        <action
+            android:id="@+id/action_moneyTransferFragment_to_homefragment"
+            app:destination="@id/homefragment" />
+        <action
+            android:id="@+id/action_moneyTransferFragment_to_cashFinalFragment"
+            app:destination="@id/cashFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cashFinalFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.CashFinalFragment"
+        android:label="fragment_cash_final"
+        tools:layout="@layout/fragment_cash_final" >
+        <action
+            android:id="@+id/action_cashFinalFragment_to_moneyTransferFragment"
+            app:destination="@id/moneyTransferFragment" />
+        <action
+            android:id="@+id/action_cashFinalFragment_to_dailogFragment"
+            app:destination="@id/dailogFragment" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/dailogFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.DailogFragment"
+        android:label="fragment_dailog"
+        tools:layout="@layout/fragment_dailog" />
+</navigation>
