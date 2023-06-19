@@ -85,4 +85,14 @@
         android:name="com.example.sharingdatabetweentwofragment.Fragment.DailogFragment"
         android:label="fragment_dailog"
         tools:layout="@layout/fragment_dailog" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.sharingdatabetweentwofragment.Fragment.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>
